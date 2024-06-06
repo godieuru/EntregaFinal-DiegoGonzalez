@@ -1,0 +1,25 @@
+@mixin background($backgroundimage) {
+  background-image: url($backgroundimage);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+@mixin bmobile($backgroundmobile) {
+  @media screen and (max-width: 768px) {
+    background-image: url($backgroundmobile);
+    max-width: 100%;
+  }
+}
+
+@mixin form-background {
+  background-color: $backgroundcolor;
+  background-image: url($backgroundform);
+  opacity: 0.75;
+  max-width: 650px;
+  padding: 5px 40px;
+  margin-top: 130px;
+  margin-bottom: 130px;
+  border-radius: 30px;
+}

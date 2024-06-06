@@ -1,0 +1,25 @@
+/*Backgrounds*/
+
+.bindex {
+  @include background($backgroundindex);
+  background-color: $backgroundcolor;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+  @include bmobile($backgroundmobile);
+}
+
+.breleases {
+  @include background($backgroundreleases);
+  background-color: $backgroundcolor;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.form {
+  @include form-background;
+}

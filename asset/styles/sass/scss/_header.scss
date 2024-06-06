@@ -1,0 +1,40 @@
+    /*Header*/
+
+.navbar-brand img {
+    height: 110px;
+  
+    @media (max-width: 768px) {
+      padding-left: $padding1;
+    }
+  }
+  
+  .navbar-nav {
+    margin-left: $marginauto;
+  
+    .nav-item {
+      margin-left: $padding2;
+  
+      @media (max-width: 768px) {
+        margin-left: $padding1;
+        padding-right: $padding1;
+      }
+    }
+  
+    .nav-link {
+      color: $colorwhite !important;
+      font-family: $fontfamilyarchivo !important;
+      padding-right: $padding1 !important;
+      font-size: $fontsize2 !important;
+      font-weight: $fontweight1 !important;
+      font-style: normal !important;
+  
+      &:hover {
+        color: $colorblue !important;
+      }
+    }
+  }
+  
+  .navbar-toggler-icon {
+    background-color: $colorwhite;
+    margin-right: $padding2;
+  }

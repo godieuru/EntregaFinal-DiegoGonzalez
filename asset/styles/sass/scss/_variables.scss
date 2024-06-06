@@ -1,0 +1,48 @@
+/*Colores*/
+
+$colorwhite: white;
+$colorblack: black;
+$colorgray: grey;
+$colororange: orange;
+$colorblue: rgb(0, 56, 168);
+$formbackgroundcolor: white;
+$backgroundcolor: black;
+
+/*Fuentes*/
+
+$fontfamilyarchivo: "Archivo Black", sans-serif;
+$fontsize1: 30px;
+$fontsize2: 20px;
+$fontsize3: 15px;
+$fontweight1: 600;
+$fontweight2: normal;
+
+/*Backgrounds*/
+
+$backgroundindex: "../images/fondoindex.png";
+$backgroundmobile: "../images/mobile.png";
+$backgroundreleases: "../images/eleufondo.png";
+$backgroundform: "../images/fondo2.jpg";
+
+
+/*Padding - Margin*/
+
+$marginauto: auto;
+$margintop1: 200px;
+$margintop2: 25px;
+$marginleft1: 10%;
+$marginleft2: 20%;
+$padding1: 20px;
+$padding2: 10px;
+$paddingleft: 40px;
+$paddingright: 40px;
+$formpadding: 5px 40px;
+$formmargintop: 130px;
+$formmarginbottom: 130px;
+$formborderradius: 30px;
+
+/*Form*/
+
+$formbackgroundimage: url('../images/fondo2.jpg');
+$formopacity: 0.75;
+$formmaxwidth: 650px;

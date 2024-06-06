@@ -1,0 +1,189 @@
+/*Releases*/
+
+/*Release 1*/
+
+.hpages {
+    margin: $marginauto;
+    margin-top: 10vh;
+    text-align: center;
+    color: $colorwhite;
+    font-family: $fontfamilyarchivo;
+    font-weight: $fontweight1;
+    font-style: normal;
+  
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
+  }
+  
+  .release1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+    margin-bottom: 30px;
+    width: 1200px;
+    padding-right: $padding2;
+  
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      width: 100%;
+      margin: $marginauto;
+    }
+  
+    .irelease1 {
+      max-width: 320px;
+      height: 200px;
+      padding: $padding1;
+      margin-top: $marginauto;
+      border-radius: 12px;
+      border: 0;
+    }
+  
+    .hrelease1 {
+      display: flex;
+      padding-bottom: $padding1;
+      font-family: $fontfamilyarchivo;
+      font-style: normal;
+      font-size: $fontsize1;
+    }
+  
+    .parraforelease1 {
+      font-style: normal;
+      font-size: $fontsize2;
+      padding: $padding1;
+      color: $colorwhite;
+      text-align: justify;
+      align-items: center;
+    }
+  }
+  
+  
+  /*Release 2*/
+  
+  .release2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 1200px;
+    padding-right: $padding2;
+  
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      width: 100%;
+      margin: $marginauto;
+    }
+  
+    .irelease2 {
+      max-width: 320px;
+      height: 200px;
+      padding: $padding1;
+      margin-top: $marginauto;
+      border-radius: 12px;
+      border: 0;
+    }
+  
+    .hrelease2 {
+      display: flex;
+      padding-bottom: $padding1;
+      font-family: $fontfamilyarchivo;
+      font-style: normal;
+      font-size: $fontsize1;
+    }
+  
+    .parraforelease2 {
+      font-style: normal;
+      font-size: $fontsize2;
+      padding: $padding1;
+      color: $colorwhite;
+      text-align: justify;
+      align-items: center;
+    }
+  }
+  
+  /*Release 3*/
+  
+  .release3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 1200px;
+    padding-right: $padding2;
+  
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      width: 100%;
+      margin: $marginauto;
+    }
+  
+    .irelease3 {
+      max-width: 320px;
+      height: 200px;
+      padding: $padding1;
+      margin-top: $marginauto;
+      border-radius: 12px;
+      border: 0;
+    }
+  
+    .hrelease3 {
+      display: flex;
+      padding-bottom: $padding1;
+      font-family: $fontfamilyarchivo;
+      font-style: normal;
+      font-size: $fontsize1;
+    }
+  
+    .parraforelease3 {
+      font-style: normal;
+      font-size: $fontsize2;
+      padding: $padding1;
+      color: $colorwhite;
+      text-align: justify;
+      align-items: center;
+    }
+  }
+  
+  /*Release 4*/
+  
+  .release4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 1200px;
+    padding-right: $padding2;
+  
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      width: 100%;
+      margin: $marginauto;
+    }
+  
+    .irelease4 {
+      max-width: 320px;
+      height: 200px;
+      padding: $padding1;
+      margin-top: $marginauto;
+      border-radius: 12px;
+      border: 0;
+    }
+  
+    .hrelease4 {
+      display: flex;
+      padding-bottom: $padding1;
+      font-family: $fontfamilyarchivo;
+      font-style: normal;
+      font-size: $fontsize1;
+    }
+  
+    .parraforelease4 {
+      font-style: normal;
+      font-size: $fontsize2;
+      padding: $padding1;
+      color: $colorwhite;
+      text-align: justify;
+      align-items: center;
+    }
+  }

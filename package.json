@@ -1,0 +1,25 @@
+{
+  "name": "eleu",
+  "version": "1.0.0",
+  "description": "Eleu's website",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/godieuru/PreEntrega2-DiegoGonzalez.git"
+  },
+  "keywords": [
+    "dj",
+    "techno",
+    "electronic",
+    "music"
+  ],
+  "author": "godieuru",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/godieuru/PreEntrega2-DiegoGonzalez/issues"
+  },
+  "homepage": "https://github.com/godieuru/PreEntrega2-DiegoGonzalez#readme"
+}
