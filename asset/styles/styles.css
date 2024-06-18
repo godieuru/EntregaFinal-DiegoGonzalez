@@ -152,6 +152,11 @@ footer {
   background-color: rgb(0, 56, 168);
   border-radius: 30px;
 }
+@media screen and (max-width: 768px) {
+  .bucontact {
+    width: 200px;
+  }
+}
 
 @media (max-width: 768px) {
   .bglogo img {
@@ -279,7 +284,8 @@ footer {
 }
 @media screen and (max-width: 768px) {
   .galeria {
-    padding: 0 20px;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 .galeria img {
