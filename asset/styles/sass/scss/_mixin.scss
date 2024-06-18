@@ -1,3 +1,5 @@
+/*Mixin*/
+
 @mixin background($backgroundimage) {
   background-image: url($backgroundimage);
   background-size: cover;
@@ -22,4 +24,10 @@
   margin-top: 130px;
   margin-bottom: 130px;
   border-radius: 30px;
+}
+
+@mixin responsive-768px {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
 }

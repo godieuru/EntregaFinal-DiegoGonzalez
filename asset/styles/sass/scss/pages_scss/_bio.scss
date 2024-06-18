@@ -1,40 +1,45 @@
 /*Bio*/
 
 .bioimg {
+  display: flex;
+  max-width: 150%;
+  max-height: 600px;
+  height: auto;
+  margin-top: 30%;
+
+  @media screen and (max-width: 768px) {
     max-width: 100%;
-    height: auto;
-    margin-top: 30%;
-  
-    @media screen and (max-width: 768px) {
-      padding: $padding1;
-    }
   }
-  
-  .pbio {
-    font-family: $fontfamilyarchivo;
-    font-style: normal;
-    font-size: $fontsize3;
-    padding-left: $padding1;
-    color: $colorwhite;
-    text-align: justify;
-  
-    @media screen and (max-width: 768px) {
-      display: none;
-    }
-  }
-  
-  .biolist {
+}
+
+.pbio {
+  margin-left: 150px;
+  font-family: $fontfamilyarchivo;
+  font-style: normal;
+  font-size: $fontsize3;
+  padding-left: $padding1;
+  color: $colorwhite;
+  text-align: justify;
+  line-height: 30px;
+
+  @media screen and (max-width: 768px) {
     display: none;
-    font-family: $fontfamilyarchivo;
-    font-style: normal;
-    font-size: $fontsize2;
-    padding-right: $padding2;
-    padding-top: $padding2;
-    color: $colorwhite;
-    text-align: left;
-    line-height: 30px;
-  
-    @media screen and (max-width: 768px) {
-      display: block;
-    }
   }
+}
+
+.biolist {
+  display: none;
+  font-family: $fontfamilyarchivo;
+  font-style: normal;
+  font-size: $fontsize2;
+  padding-right: $padding2;
+  padding-top: $padding2;
+  color: $colorwhite;
+  text-align: left;
+  line-height: 30px;
+
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+}
+  

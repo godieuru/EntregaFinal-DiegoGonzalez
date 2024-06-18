@@ -29,13 +29,14 @@
   font-style: normal;
   text-decoration: none;
   text-align: center;
-  color: $colorblack;
+  color: $colorwhite;
 }
 
 .bucontact {
   width: 150px;
   margin-top: 0px;
   margin-left: 30%;
+  background-color: $colorblue;
   border-radius: $formborderradius;
 }
 
