@@ -2,6 +2,7 @@
 
 .form {
   @include form-background;
+  margin-top: 0;
 
   .formimput,
   .formtextarea,
@@ -14,11 +15,6 @@
     font-family: $fontfamilyarchivo;
     text-align: center;
     color: $colorblue;
-  }
-
-  .formtitle {
-    color: $colorwhite;
-    text-align: center;
   }
 
   .formlabel {
