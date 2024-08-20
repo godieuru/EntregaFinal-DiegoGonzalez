@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const next = carousel.querySelector(".next");
     let index = 0;
 
-    const updateCarousel = () => {
+    const updatecarousel = () => {
       images.forEach((img) => {
         img.classList.remove("active");
       });
@@ -17,30 +17,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
     prev.addEventListener("click", () => {
       index = index === 0 ? images.length - 1 : index - 1;
-      updateCarousel();
+      updatecarousel();
     });
 
     next.addEventListener("click", () => {
       index = index === images.length - 1 ? 0 : index + 1;
-      updateCarousel();
+      updatecarousel();
     });
 
-    updateCarousel();
+    updatecarousel();
   });
 
-  let cart = loadCartFromLocalStorage();
-  const cartItems = document.getElementById("cartitems");
-  const cartTotal = document.getElementById("carttotal");
-  const toggleCart = document.getElementById("cartbutton");
-  const emptyCartButton = document.getElementById("emptycart");
-  const checkoutButton = document.getElementById("checkout");
-  const paymentModal = document.getElementById("payment");
-  const closeModal = document.querySelector(".closemodal");
+  let cart = loadlocalstorage();
+  const cartitems = document.getElementById("cartitems");
+  const carttotal = document.getElementById("carttotal");
+  const togglecart = document.getElementById("cartbutton");
+  const emptycart = document.getElementById("emptycart");
+  const checkoutbutton = document.getElementById("checkout");
+  const paymentmodal = document.getElementById("payment");
+  const closemodal = document.querySelector(".closemodal");
 
-  toggleCart.addEventListener("click", () => {
-    const cartContent = document.getElementById("cartcontent");
-    cartContent.style.display =
-      cartContent.style.display === "none" || cartContent.style.display === ""
+  togglecart.addEventListener("click", () => {
+    const cartcontent = document.getElementById("cartcontent");
+    cartcontent.style.display =
+      cartcontent.style.display === "none" || cartcontent.style.display === ""
         ? "block"
         : "none";
   });
@@ -56,28 +56,28 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         cart[product] = { price, quantity: 1, total: price };
       }
-      updateCart();
-      showAlert(`Product added to cart: ${product}`);
+      updatecart();
+      showalert(`Product added to cart: ${product}`);
     });
   });
 
-  window.increaseQuantity = (product) => {
+  window.increasequantity = (product) => {
     if (cart[product]) {
       cart[product].quantity += 1;
       cart[product].total += cart[product].price;
-      updateCart();
+      updatecart();
     }
   };
 
-  window.decreaseQuantity = (product) => {
+  window.decreasequantity = (product) => {
     if (cart[product] && cart[product].quantity > 1) {
       cart[product].quantity -= 1;
       cart[product].total -= cart[product].price;
-      updateCart();
+      updatecart();
     }
   };
 
-  emptyCartButton.addEventListener("click", () => {
+  emptycart.addEventListener("click", () => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -87,14 +87,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }).then((result) => {
       if (result.isConfirmed) {
         cart = {};
-        updateCart();
-        showAlert("Cart emptied");
+        updatecart();
+        showalert("Cart emptied");
       }
     });
   });
 
-  function updateCart() {
-    cartItems.innerHTML = "";
+  function updatecart() {
+    cartitems.innerHTML = "";
     let total = 0;
 
     for (const product in cart) {
@@ -102,29 +102,29 @@ document.addEventListener("DOMContentLoaded", () => {
       const li = document.createElement("li");
       li.innerHTML = `
                 ${product}: $${item.price.toFixed(2)} x ${item.quantity}
-                <button onclick="increaseQuantity('${product}')">+</button>
-                <button onclick="decreaseQuantity('${product}')">-</button>
+                <button onclick="increasequantity('${product}')">+</button>
+                <button onclick="decreasequantity('${product}')">-</button>
             `;
-      cartItems.appendChild(li);
+      cartitems.appendChild(li);
       total += item.total;
     }
 
-    cartTotal.textContent = total.toFixed(2);
+    carttotal.textContent = total.toFixed(2);
     document.getElementById("cartcount").textContent = Object.keys(cart).length;
 
-    saveCartToLocalStorage();
+    savelocalstorage();
   }
 
-  function saveCartToLocalStorage() {
+  function savelocalstorage() {
     localStorage.setItem("cart", JSON.stringify(cart));
   }
 
-  function loadCartFromLocalStorage() {
-    const savedCart = localStorage.getItem("cart");
-    return savedCart ? JSON.parse(savedCart) : {};
+  function loadlocalstorage() {
+    const savedcart = localStorage.getItem("cart");
+    return savedcart ? JSON.parse(savedcart) : {};
   }
 
-  function showAlert(message) {
+  function showalert(message) {
     Swal.fire({
       text: message,
       icon: "success",
@@ -132,27 +132,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  checkoutButton.addEventListener("click", () => {
+  checkoutbutton.addEventListener("click", () => {
     document.getElementById("cartcontent").style.display = "none";
-    paymentModal.style.display = "block";
+    paymentmodal.style.display = "block";
   });
 
-  closeModal.addEventListener("click", () => {
-    paymentModal.style.display = "none";
+  closemodal.addEventListener("click", () => {
+    paymentmodal.style.display = "none";
     document.getElementById("cartcontent").style.display = "block";
   });
 
   document.getElementById("cancelpayment").addEventListener("click", () => {
-    paymentModal.style.display = "none";
+    paymentmodal.style.display = "none";
     document.getElementById("cartcontent").style.display = "block";
   });
 
   window.addEventListener("click", (event) => {
-    if (event.target === paymentModal) {
-      paymentModal.style.display = "none";
+    if (event.target === paymentmodal) {
+      paymentmodal.style.display = "none";
       document.getElementById("cartcontent").style.display = "block";
     }
   });
 
-  updateCart();
+  updatecart();
 });
