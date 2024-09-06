@@ -5,7 +5,7 @@ async function loadproducts() {
   var products = await response.json();
   displayproducts(products);
 }
-  
+
 function displayproducts(products) {
   productscontainer.innerHTML = "";
 
@@ -132,8 +132,8 @@ function initializecart(products) {
       var li = document.createElement("li");
       li.innerHTML = `
                 ${product}: $${item.price.toFixed(2)} x ${item.quantity}
-                <button onclick="increasequantity('${product}')">+</button>
-                <button onclick="decreasequantity('${product}')">-</button>
+                <button class="increase" data-product="${product}">+</button>
+                <button class="decrease" data-product="${product}">-</button>
             `;
       cartitems.appendChild(li);
       total += item.total;
@@ -148,6 +148,19 @@ function initializecart(products) {
     );
 
     savecarttolocalstorage();
+    document.querySelectorAll(".increase").forEach(function (button) {
+      button.addEventListener("click", function () {
+        var product = button.getAttribute("data-product");
+        increasequantity(product);
+      });
+    });
+
+    document.querySelectorAll(".decrease").forEach(function (button) {
+      button.addEventListener("click", function () {
+        var product = button.getAttribute("data-product");
+        decreasequantity(product);
+      });
+    });
   }
 
   function savecarttolocalstorage() {
@@ -220,6 +233,24 @@ function initializecart(products) {
     updatecart();
     clearpaymentinputs();
   });
+
+  function increasequantity(product) {
+    if (cart[product]) {
+      cart[product].quantity += 1;
+      cart[product].total = cart[product].price * cart[product].quantity;
+      updatecart();
+    }
+  }
+  
+  function decreasequantity(product) {
+    if (cart[product] && cart[product].quantity > 1) {
+      cart[product].quantity -= 1;
+      cart[product].total = cart[product].price * cart[product].quantity;
+    } else {
+      delete cart[product];
+    }
+    updatecart();
+  }
 
   updatecart();
 }
