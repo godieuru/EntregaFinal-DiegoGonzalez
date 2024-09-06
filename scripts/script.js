@@ -38,7 +38,8 @@ function displayproducts(products) {
                 <select class="sizeselect" id="size_${product.id}">
                     ${product.sizes
                       .map(
-                        (size) => `<option value="${size.toUpperCase()}">${size.toUpperCase()}</option>`
+                        (size) =>
+                          `<option value="${size.toUpperCase()}">${size.toUpperCase()}</option>`
                       )
                       .join("")}
                 </select>
@@ -129,7 +130,12 @@ function initializecart(products) {
         cart[cartitemkey].quantity += 1;
         cart[cartitemkey].total += price;
       } else {
-        cart[cartitemkey] = { price: price, quantity: 1, total: price, size: selectedsize };
+        cart[cartitemkey] = {
+          price: price,
+          quantity: 1,
+          total: price,
+          size: selectedsize,
+        };
       }
 
       updatecart();
