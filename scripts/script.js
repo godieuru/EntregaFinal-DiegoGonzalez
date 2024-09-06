@@ -33,9 +33,19 @@ function displayproducts(products) {
                 <h2 class="titleproduct">${product.title || product.name}</h2>
                 <p>${product.description}</p>
                 <p class="price">usd ${product.price.toFixed(2)}</p>
+
+                <label for="size">Select size:</label>
+                <select class="sizeselect" id="size_${product.id}">
+                    ${product.sizes
+                      .map(
+                        (size) => `<option value="${size.toUpperCase()}">${size.toUpperCase()}</option>`
+                      )
+                      .join("")}
+                </select>
+
                 <button class="addtocart" data-product="${
                   product.title || product.name
-                }" data-price="${product.price}">
+                }" data-price="${product.price}" data-id="${product.id}">
                     Add to cart
                 </button>
             </div>
@@ -110,16 +120,20 @@ function initializecart(products) {
     button.addEventListener("click", function () {
       var product = button.getAttribute("data-product");
       var price = parseFloat(button.getAttribute("data-price"));
+      var productid = button.getAttribute("data-id");
+      var selectedsize = document.getElementById(`size_${productid}`).value;
 
-      if (cart[product]) {
-        cart[product].quantity += 1;
-        cart[product].total += price;
+      var cartitemkey = `${product} (${selectedsize})`;
+
+      if (cart[cartitemkey]) {
+        cart[cartitemkey].quantity += 1;
+        cart[cartitemkey].total += price;
       } else {
-        cart[product] = { price: price, quantity: 1, total: price };
+        cart[cartitemkey] = { price: price, quantity: 1, total: price, size: selectedsize };
       }
 
       updatecart();
-      showalert("Product added to cart: " + product);
+      showalert(`Product added to cart: ${product} (Size: ${selectedsize})`);
     });
   });
 
@@ -127,13 +141,13 @@ function initializecart(products) {
     cartitems.innerHTML = "";
     var total = 0;
 
-    for (var product in cart) {
-      var item = cart[product];
+    for (var cartitem in cart) {
+      var item = cart[cartitem];
       var li = document.createElement("li");
       li.innerHTML = `
-                ${product}: $${item.price.toFixed(2)} x ${item.quantity}
-                <button class="increase" data-product="${product}">+</button>
-                <button class="decrease" data-product="${product}">-</button>
+                ${cartitem}: $${item.price.toFixed(2)} x ${item.quantity}
+                <button class="increase" data-product="${cartitem}">+</button>
+                <button class="decrease" data-product="${cartitem}">-</button>
             `;
       cartitems.appendChild(li);
       total += item.total;
@@ -241,7 +255,7 @@ function initializecart(products) {
       updatecart();
     }
   }
-  
+
   function decreasequantity(product) {
     if (cart[product] && cart[product].quantity > 1) {
       cart[product].quantity -= 1;
