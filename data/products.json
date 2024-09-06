@@ -1,0 +1,49 @@
+[
+  {
+    "id": "tshirt",
+    "name": "Eleu T-Shirt",
+    "price": 35,
+    "description": "Available in S, M, L, and XL. Made from 100% cotton for a soft, comfortable fit. Features the iconic Eleu logo.",
+    "sizes": ["S", "M", "L", "XL"],
+    "images": [
+      "../asset/images/productos/remera1.png",
+      "../asset/images/productos/remera2.png",
+      "../asset/images/productos/remera3.png"
+    ]
+  },
+  {
+    "id": "hoodie",
+    "name": "Eleu Hoodie",
+    "price": 65,
+    "description": "Available in S, M, L, and XL. Made from a cozy cotton-polyester blend. Features the Eleu logo for a stylish look.",
+    "sizes": ["S", "M", "L", "XL"],
+    "images": [
+      "../asset/images/productos/canguro1.png",
+      "../asset/images/productos/canguro2.png",
+      "../asset/images/productos/canguro3.png"
+    ]
+  },
+  {
+    "id": "jogging",
+    "name": "Eleu Jogging Pants",
+    "price": 42,
+    "description": "Available in S, M, L, and XL. Crafted from a soft cotton-polyester blend for comfort and flexibility. Embellished with the Eleu logo.",
+    "sizes": ["S", "M", "L", "XL"],
+    "images": [
+      "../asset/images/productos/pantalon1.png",
+      "../asset/images/productos/pantalon2.png"
+    ]
+  },
+  {
+    "id": "cap",
+    "name": "Eleu Cap",
+    "price": 20,
+    "description": "One size fits all. Made from durable cotton for a comfortable, breathable fit. Features the Eleu logo on the front for a stylish touch.",
+    "sizes": ["One Size"],
+    "images": [
+      "../asset/images/productos/gorro1.png",
+      "../asset/images/productos/gorro2.png",
+      "../asset/images/productos/gorro3.png"
+    ]
+  }
+]
